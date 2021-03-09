@@ -1,0 +1,71 @@
+How to implement the blackList? I am trying to keep use of every step and have the final output not output any objects placed within the blackList. I want the end result to not allow the complete 5-digit name/number within the blackList. I want it to put out a 5 digit number that is not blacklisted.
+The blackList is a combination of all the Names.
+
+// The random number generator selects 1 of the numbers from each array. The end result is 5 numbers shown on my webpage. 
+
+const firstNumbers = ['8', '0', '3', '7', '9'];
+const secondNumbers = ['3', '0', '9', '6'];
+const thirdNumbers = ['7', '6'];
+const fourthNumbers = ['1', '5'];
+const fifthNumbers = ['4', '0'];
+
+// I want to use this blackList array to compare against the result of the 5 random numbers. I want to check the independent numbers above as a group similar to the array below.  
+//If the final result of the number generator has the same numbers as my blackList array ex. 00000, 00001... I do not allow it to show on the webpage. 
+
+//Should I name this array the same as the objects above? 
+
+//Is it best to create a json file for the blackList array because it can grow up to 100000? If so how will the code access it and prevent the getRandomNumber from generating a 5 digit number from the list?
+
+const blackList = [
+{firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '0'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '1'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '2'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '3'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '4'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '5'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '6'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '7'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '8'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '0', fifthNames: '9'},
+  {firstNames: '0', secondNames: '0', thirdNames: '0', fourthNames: '1', fifthNames: '0'}
+];
+
+// This is the math for the random generator. is this where I would implement the blackList function to read and compare the array against the 5 random numbers that show on the webpage? 
+
+const getRandomNumber = (max) => Math.floor(Math.random() * max);
+
+
+// This is where getRandomNumbers are defined. How can I use my blackList correctly so that the getRandomNumbers does not show a complete object in the blackList array?
+
+const getRandomNumbers = (if ((firstNumbers[getRandomNumber(firstNumbers.length)]) !== blackList.firstNumbers && (secondNumbers[getRandomNumber(secondNumbers.length)]) !== blackList.secondNumbers && (thirdNumbers[getRandomNumber(thirdNumbers.length)]) !== blackList.thirdNumbers &&
+(fourthNumbers[getRandomNumber(fourthNumbers.length)]) !== blackList.fourthNumbers && (fifthNumbers[getRandomNumber(fifthNumbers.length)]) !== blackList.fifthNumbers)
+{
+  '${firstNumbers[getRandomNumber(firstNumbers.length)]}
+   ${secondNumbers[getRandomNumber(secondNumbers.length)]} 
+   ${thirdNumbers[getRandomNumber(thirdNumbers.length)]} 
+   ${fourthNumbers[getRandomNumber(fourthNumbers.length)]} 
+   ${fifthNumbers[getRandomNumber(fifthNumbers.length)]}`;
+}
+else {
+// how would I write this code to loop and repeat the process until it does not match the blackList? how to get the code to properly read the blackList?
+};
+);
+
+
+// I see this is telling the getRandomNumbers where to go. This is also where the button is at.
+
+// Is this where I would put the blackList function? This is where the connection to html/css is at also.
+
+const setRandomNumber = () => {
+document.getElementById('random-name').innerText=getRandomNumbers();
+};
+
+document.getElementById('generate').addEventListener('click', setRandomNumber);
+
+
+// This is the final step. Should I have an if/else statement here and/or a loop function. I would go back to the getRandomNumbers function if the random output 5 digits are the same as my blackList. If not show the setRandomNumber on my webpage.
+
+setRandomNumber();
+javascript
+random
+blacklist
